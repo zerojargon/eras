@@ -17,6 +17,7 @@ const products = {
               return resolve(response.body.data)
             })
         }),
+        noCache: true
       })
     }
   },
@@ -34,6 +35,7 @@ const products = {
             return resolve(response.body)
           })
         }),
+        noCache: true
       })
     }
   },
@@ -51,6 +53,7 @@ const products = {
             return resolve(response.body.data)
           })
         }),
+        noCache: true
       })
     }
   },
@@ -68,6 +71,7 @@ const products = {
             return resolve(response.body)
           })
         }),
+        noCache: true
       })
     }
   },
