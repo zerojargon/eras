@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Row, Col, FormGroup, FormControl } from 'react-bootstrap'
 
 export default class SearchField extends Component {

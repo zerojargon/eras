@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Grid, FormGroup, FormControl, ControlLabel, Row, Col } from 'react-bootstrap'
 
 import { ContactForm } from '../../../organisms/SEO'

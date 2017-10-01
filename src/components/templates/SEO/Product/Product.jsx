@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Button, Grid, Panel } from 'react-bootstrap'
 
 import { ProductDetail } from '../../../molecules'

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { ProductList } from '../../../organisms/SEO'
 import { Grid } from 'react-bootstrap'
 

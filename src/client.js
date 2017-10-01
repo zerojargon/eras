@@ -1,7 +1,8 @@
 import './styles/main.scss'
 
 import React, { Component } from 'react'
-import { render } from 'react-dom'
+import PropTypes from 'prop-types'
+import { hydrate } from 'react-dom'
 import { Provider, connect } from 'react-redux'
 import { Router, browserHistory, applyRouterMiddleware, Redirect } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
@@ -53,4 +54,4 @@ const renderApp = () => (
   </Provider>
 )
 
-render(renderApp(), root)
+hydrate(renderApp(), root)
