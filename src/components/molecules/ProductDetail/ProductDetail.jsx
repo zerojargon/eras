@@ -3,18 +3,46 @@ import PropTypes from 'prop-types'
 import { Table } from '../'
 import { Row, Col, Button } from 'react-bootstrap'
 import { Link } from 'react-router'
+import Lightbox from 'react-images';
 
 export default class ProductDetail extends Component {
 
   constructor() {
     super()
     this.state = {
-      selectedImage: null
+      selectedImage: null,
+      currentImage: 0,
+      isLightBoxOpen: false
     }
+    
+    this.toggleLightBox = this.toggleLightBox.bind(this)
+    this.prevImage = this.prevImage.bind(this)
+    this.nextImage = this.nextImage.bind(this)
   }
 
-  selectImage(id) {
-    this.setState({ selectedImage: id })
+  selectImage(id, index) {
+    this.setState({ 
+      selectedImage: id,
+      currentImage: index
+    })
+  }
+
+  toggleLightBox() {
+    this.setState({
+      isLightBoxOpen: !this.state.isLightBoxOpen
+    })
+  }
+
+  prevImage() {
+    this.setState({
+      currentImage: --this.state.currentImage
+    })
+  }
+
+  nextImage() {
+    this.setState({
+      currentImage: ++this.state.currentImage
+    })
   }
 
   static propTypes = {
@@ -47,26 +75,48 @@ export default class ProductDetail extends Component {
             <Col sm={3}>
               {product.image.map((image, key) => {
                 return (
-                  <div key={key} onClick={this.selectImage.bind(this, image.id)}>
+                  <div key={key} onClick={this.selectImage.bind(this, image.id, key)}>
                     <img
                       src={image.meta.resourceUrl}
-                      className='img-responsive center-block'
+                      className='img-responsive center-block cursor-pointer'
+                      alt={`${product.name} Product Image Thumbnail`}
                     />
                   </div>
                 )
               })}
+              <Lightbox
+                images={product.image.map(image => ({
+                  src: image.meta.resourceUrl
+                }))}
+                currentImage={this.state.currentImage || 0}
+                isOpen={this.state.isLightBoxOpen}
+                onClickPrev={this.prevImage}
+                onClickNext={this.nextImage}
+                onClose={this.toggleLightBox}
+              />
+
             </Col>
             <Col sm={9}>
               {!imageToDisplay && primaryImage &&
-                <img src={primaryImage.meta.resourceUrl} className='img-responsive center-block' />
+                <img 
+                  src={primaryImage.meta.resourceUrl}
+                  className='img-responsive center-block cursor-pointer'
+                  alt={`${product.name} Main Product Image`}
+                  onClick={this.toggleLightBox}
+                />
               }
               {imageToDisplay &&
-                <img src={imageToDisplay.meta.resourceUrl} className='img-responsive center-block' />
+                <img 
+                  src={imageToDisplay.meta.resourceUrl}
+                  className='img-responsive center-block cursor-pointer'
+                  alt={`${product.name} Product Image`}
+                  onClick={this.toggleLightBox}
+                />
               }
             </Col>
           </Row>
         </Col>
-        <Link to={`/contact-us?subject=${product.name}&productId=${product.stockCode}`}>Enquire about this antique</Link>
+        <Link to={`/contact-us?subject=${product.name}&productId=${product.name}(${product.stockCode})`}>Enquire about this antique</Link>
       </Row>
     )
   }

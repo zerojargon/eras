@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Grid, FormGroup, FormControl, ControlLabel, Row, Col } from 'react-bootstrap'
-
+import { Map } from '../../../atoms'
 import { ContactForm } from '../../../organisms/SEO'
 
 export default class Contact extends Component {
@@ -14,7 +14,14 @@ export default class Contact extends Component {
   }
 
   render() {
-    return (
+    return [
+      <Map
+        pointer={{ lat: 50.840568, lng: 0.463319 }}
+        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `400px`, marginTop: `-25px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />,
       <Grid className="t-contact-us">
         <Row>
           <Col sm={8}>
@@ -71,7 +78,7 @@ export default class Contact extends Component {
         </p>
 
       </Grid>
-    )
+    ]
   }
 
 }

@@ -19,9 +19,8 @@ export default class ProductList extends Component {
         {this.props.products.map((product, key) => {
           return (
             <Col sm={3} key={key}>
-              <Panel>
+              <Panel onClick={this.navigate.bind(null, product.id)} className="cursor-pointer">
                 <ProductTile product={product} />
-                <Button bsStyle='success' onClick={this.navigate.bind(null, product.id)}>View</Button>
               </Panel>
             </Col>
           )

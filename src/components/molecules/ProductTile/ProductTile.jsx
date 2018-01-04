@@ -14,7 +14,11 @@ export default class ProductTile extends Component {
     return (
       <div>
         {productImage &&
-          <img src={productImage.meta.resourceUrl} className='img-responsive' />
+          <img
+            src={productImage.meta.resourceUrl}
+            className='img-responsive'
+            alt={`${product.name} Main Product Image`}
+          />
         }
         <h3>{product.name}</h3>
         <p>£{product.price}</p>
