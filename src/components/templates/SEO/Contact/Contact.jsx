@@ -58,24 +58,39 @@ export default class Contact extends Component {
 
         <hr />
 
-        <h2>Find us...</h2>
+        <Row>
+          <Col sm={8}>
+            <h2>Find us...</h2>
 
-        <h3>By car:</h3>
-          <p><strong>Via the A259 (Main Coast Road):</strong></p>
-          <p>
-            Where the A259 crosses the A269 at Bexhill, turn left (if westbound) or right (if eastbound) at the traffic crossing onto the A269 London Road.<br />
-            Take the immediate right on this road into Beeching Road Industrial Estate.
-            Continue to the end of this road, and turn right. <br />
-            We are then immediately on your right.
-          </p>
+            <h3>By car:</h3>
+              <p><strong>Via the A259 (Main Coast Road):</strong></p>
+              <p>
+                Where the A259 crosses the A269 at Bexhill, turn left (if westbound) or right (if eastbound) at the traffic crossing onto the A269 London Road.<br />
+                Take the immediate right on this road into Beeching Road Industrial Estate.
+                Continue to the end of this road, and turn right. <br />
+                We are then immediately on your right.
+              </p>
 
-        <h3>By train:</h3>
-        <p>
-          Alight at Bexhill Station. Exit the station and turn left, heading back parallel to the station along the one-way Station Road. <br />
-          At the end of this road bear left, and take the first exit off the roundabout onto Buckhurst Place. <br />
-          Rather than following this road around to the left, bear right onto Terminus Road. <br />
-          Follow this road for roughly 200 yards, and we are on the right.
-        </p>
+            <h3>By train:</h3>
+            <p>
+              Alight at Bexhill Station. Exit the station and turn left, heading back parallel to the station along the one-way Station Road. <br />
+              At the end of this road bear left, and take the first exit off the roundabout onto Buckhurst Place. <br />
+              Rather than following this road around to the left, bear right onto Terminus Road. <br />
+              Follow this road for roughly 200 yards, and we are on the right.
+            </p>
+          </Col>
+
+          <Col sm={4}>
+            <h2>Opening Times:</h2>
+            <p><strong>Monday:</strong> 10:00 – 17:00</p>
+            <p><strong>Tuesday:</strong> 10:00 – 17:00</p>
+            <p><strong>Wednesday:</strong> 10:00 – 17:00</p>
+            <p><strong>Thursday:</strong> 10:00 – 17:00</p>
+            <p><strong>Friday:</strong> 10:00 – 17:00</p>
+            <p><strong>Saturday:</strong> 10:00 – 17:00</p>
+            <p><strong>Sunday:</strong> Closed</p>
+          </Col>
+        </Row>
 
       </Grid>
     ]

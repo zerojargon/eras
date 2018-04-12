@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, Button, FormControl, Glyphicon, OverlayTrigger, Popover } from 'react-bootstrap'
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, Button, FormControl, Glyphicon } from 'react-bootstrap'
 import navigate from '../../../services/navigator'
 
 export default class HeaderSEO extends Component {
@@ -17,18 +17,6 @@ export default class HeaderSEO extends Component {
     const styles = {
       marginBottom: '25px'
     }
-
-    const openingTimes = (
-      <Popover id="popover-trigger-focus" title="Opening Times">
-        <p><strong>Monday:</strong> 10:00 – 17:00</p>
-        <p><strong>Tuesday:</strong> 10:00 – 17:00</p>
-        <p><strong>Wednesday:</strong> 10:00 – 17:00</p>
-        <p><strong>Thursday:</strong> 10:00 – 17:00</p>
-        <p><strong>Friday:</strong> 10:00 – 17:00</p>
-        <p><strong>Saturday:</strong> 10:00 – 17:00</p>
-        <p><strong>Sunday:</strong> Closed</p>
-      </Popover>
-    );
 
     return (
       <div style={styles}>
@@ -59,13 +47,6 @@ export default class HeaderSEO extends Component {
               {' '}
               <Button type="submit"><Glyphicon glyph="search" /></Button>
             </Navbar.Form>
-            <Nav pullRight>
-              <NavItem>
-                <OverlayTrigger trigger={['hover','focus']} placement="bottom" overlay={openingTimes}>
-                  <p style={{margin: 0}}>Opening Times</p>
-                </OverlayTrigger>
-              </NavItem>
-            </Nav>
           </Navbar.Collapse>
         </Navbar>
       </div>
