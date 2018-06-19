@@ -14,7 +14,9 @@
     "build:clean": "del \"dist/!(.git*|Procfile)**\"",
     "build:copy": "copyfiles -u 1 public/* public/**/* dist",
     "prebuild": "npm run build:clean && npm run build:copy",
-    "build": "NODE_ENV=$BUILD_ENV webpack --config webpack/webpack.config"
+    "build": "NODE_ENV=$BUILD_ENV webpack --config webpack/webpack.config",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
@@ -108,6 +110,8 @@
     "url-loader": "^0.5.8",
     "validator": "^6.2.0",
     "webpack": "^1.14.0",
-    "webpack-isomorphic-tools": "^2.6.5"
-  }
+    "webpack-isomorphic-tools": "^2.6.5",
+    "snyk": "^1.83.0"
+  },
+  "snyk": true
 }
