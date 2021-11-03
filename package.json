@@ -106,7 +106,7 @@
     "superagent-prefix": "0.0.2",
     "superagent-use": "^0.1.0",
     "url-loader": "^0.5.8",
-    "validator": "^6.2.0",
+    "validator": "^13.7.0",
     "webpack": "^1.14.0",
     "webpack-isomorphic-tools": "^2.6.5"
   }
