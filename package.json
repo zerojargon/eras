@@ -63,7 +63,7 @@
     "json-loader": "^0.5.4",
     "kew": "^0.7.0",
     "lodash": "^4.17.4",
-    "moment": "^2.17.1",
+    "moment": "^2.29.2",
     "morgan": "^1.7.0",
     "node-sass": "^4.5.0",
     "normalizr": "^3.0.1",
